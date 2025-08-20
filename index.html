@@ -1,0 +1,531 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Ikatan Mahasiswa Aceh Selatan (IMAS) — Resmi</title>
+  <meta name="description" content="Website resmi Ikatan Mahasiswa Aceh Selatan (IMAS). Informasi organisasi, program kerja, kegiatan, berita, dan kontak." />
+  <meta name="keywords" content="Ikatan Mahasiswa Aceh Selatan, IMAS, organisasi mahasiswa, Aceh Selatan" />
+  <meta property="og:title" content="IMAS — Ikatan Mahasiswa Aceh Selatan" />
+  <meta property="og:description" content="Informasi organisasi, program, kegiatan, dan layanan IMAS." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="/og-image.jpg" />
+  <meta name="theme-color" content="#0ea5e9" />
+
+  <!-- TailwindCSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    // Tailwind config (optional custom color)
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            aksen: {
+              50: '#eff6ff',
+              100: '#dbeafe',
+              200: '#bfdbfe',
+              300: '#93c5fd',
+              400: '#60a5fa',
+              500: '#3b82f6',
+              600: '#2563eb',
+              700: '#1d4ed8',
+              800: '#1e40af',
+              900: '#1e3a8a'
+            }
+          }
+        }
+      }
+    }
+  </script>
+
+  <!-- Icons -->
+  <link rel="icon" href="/favicon.ico" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root { --radius: 16px; }
+    body { font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, 'Noto Sans', 'Apple Color Emoji', 'Segoe UI Emoji'; }
+    /* Glass card */
+    .glass { background: rgba(255,255,255,.7); backdrop-filter: saturate(150%) blur(8px); }
+    .dark .glass { background: rgba(17,24,39,.6); }
+  </style>
+
+  <script>
+    // Dark mode: persist preference
+    const userPref = localStorage.getItem('theme');
+    if (userPref === 'dark') document.documentElement.classList.add('dark')
+  </script>
+</head>
+
+<body class="bg-slate-50 dark:bg-slate-900 text-slate-800 dark:text-slate-100">
+  <!-- NAVBAR -->
+  <header class="fixed top-0 inset-x-0 z-50">
+    <nav class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="mt-4 mb-3 flex items-center justify-between rounded-2xl glass shadow-lg px-4 py-3">
+        <a href="#beranda" class="flex items-center gap-3">
+          <img src="imas.png" alt="Logo IMAS" class="h-10 w-10 rounded-full object-cover" />
+          <div>
+            <p class="text-lg font-extrabold leading-none">IMAS</p>
+            <p class="text-xs opacity-80 -mt-1">Ikatan Mahasiswa Aceh Selatan</p>
+          </div>
+        </a>
+        <div class="hidden md:flex items-center gap-6 text-sm font-medium">
+          <a class="hover:text-aksen-500" href="#tentang">Tentang</a>
+          <a class="hover:text-aksen-500" href="#program">Program</a>
+          <a class="hover:text-aksen-500" href="#kegiatan">Kegiatan</a>
+          <a class="hover:text-aksen-500" href="#berita">Berita</a>
+          <a class="hover:text-aksen-500" href="#pengurus">Pengurus</a>
+          <a class="hover:text-aksen-500" href="#galeri">Galeri</a>
+          <a class="hover:text-aksen-500" href="#kontak">Kontak</a>
+        </div>
+        <div class="flex items-center gap-2">
+          <button id="btnTheme" class="inline-flex items-center gap-2 rounded-xl border border-slate-200 dark:border-slate-700 px-3 py-2 text-sm hover:bg-slate-100 dark:hover:bg-slate-800">
+            <span class="sr-only">Toggle Tema</span>
+            <svg id="iconSun" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5 hidden"><path d="M12 18a6 6 0 100-12 6 6 0 000 12z"/><path d="M12 2v2m0 16v2m10-10h-2M4 12H2m15.364 6.364l-1.414-1.414M6.05 6.05 4.636 4.636m12.728 0-1.414 1.414M6.05 17.95l-1.414 1.414"/></svg>
+            <svg id="iconMoon" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M21.752 15.002A9 9 0 1111.003 2.25a.75.75 0 01.88.997 7.5 7.5 0 009.872 9.872.75.75 0 01-.003.883z"/></svg>
+          </button>
+          <button id="btnMenu" class="md:hidden inline-flex items-center rounded-xl border border-slate-200 dark:border-slate-700 p-2">
+            <span class="sr-only">Buka menu</span>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6"><path fill-rule="evenodd" d="M3.75 5.25a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75zm0 6a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75zm0 6a.75.75 0 000 1.5h16.5a.75.75 0 000-1.5H3.75z" clip-rule="evenodd" /></svg>
+          </button>
+        </div>
+      </div>
+      <!-- mobile menu -->
+      <div id="mobileMenu" class="md:hidden hidden glass rounded-2xl shadow-lg px-4 py-3 mb-4">
+        <div class="grid gap-2 text-sm">
+          <a class="py-2" href="#tentang">Tentang</a>
+          <a class="py-2" href="#program">Program</a>
+          <a class="py-2" href="#kegiatan">Kegiatan</a>
+          <a class="py-2" href="#berita">Berita</a>
+          <a class="py-2" href="#pengurus">Pengurus</a>
+          <a class="py-2" href="#galeri">Galeri</a>
+          <a class="py-2" href="#kontak">Kontak</a>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section id="beranda" class="relative isolate overflow-hidden pt-36 pb-24">
+    <img src="/hero-aceh-selatan.jpg" alt="Aceh Selatan" class="absolute inset-0 -z-10 h-full w-full object-cover opacity-30 dark:opacity-20">
+    <div class="absolute inset-0 -z-10 bg-gradient-to-b from-white/90 via-white/60 to-white/90 dark:from-slate-900/90 dark:via-slate-900/70 dark:to-slate-900/90"></div>
+
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-center">
+        <div>
+          <span class="inline-flex items-center gap-2 rounded-full bg-aksen-100 dark:bg-aksen-800 text-aksen-700 dark:text-aksen-100 px-3 py-1 text-xs font-semibold">#BergerakBersama</span>
+          <h1 class="mt-4 text-4xl sm:text-5xl font-extrabold leading-tight">Ikatan Mahasiswa Aceh Selatan</h1>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">Ruang kolaborasi, pengembangan diri, dan pengabdian untuk mahasiswa Aceh Selatan di seluruh Nusantara.</p>
+          <div class="mt-6 flex flex-wrap gap-3">
+            <a href="#daftar" class="rounded-xl bg-aksen-600 hover:bg-aksen-700 text-white px-5 py-3 font-semibold shadow-lg">Daftar Anggota</a>
+            <a href="#program" class="rounded-xl border border-slate-300 dark:border-slate-700 px-5 py-3 font-semibold">Lihat Program</a>
+            <a href="https://wa.me/6281234567890" target="_blank" class="rounded-xl border border-green-500 text-green-600 dark:text-green-400 px-5 py-3 font-semibold">WhatsApp</a>
+          </div>
+        </div>
+        <div class="grid sm:grid-cols-3 gap-4">
+          <div class="glass rounded-2xl p-5 shadow">
+            <p class="text-3xl font-extrabold">50</p>
+            <p class="text-sm opacity-80">Anggota aktif</p>
+          </div>
+          <div class="glass rounded-2xl p-5 shadow">
+            <p class="text-3xl font-extrabold">1</p>
+            <p class="text-sm opacity-80">Kegiatan / tahun</p>
+          </div>
+          <div class="glass rounded-2xl p-5 shadow">
+            <p class="text-3xl font-extrabold">6</p>
+            <p class="text-sm opacity-80">Bidang divisi</p>
+          </div>
+          <div class="sm:col-span-3 glass rounded-2xl p-5 shadow">
+            <p class="font-semibold">Misi</p>
+            <p class="text-sm opacity-80">-</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TENTANG -->
+  <section id="tentang" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-10 items-center">
+        <img src="/tentang.jpg" alt="Tentang HIMAS" class="rounded-3xl shadow-lg object-cover w-full h-72">
+        <div>
+          <h2 class="text-3xl font-extrabold">Tentang IMAS</h2>
+          <p class="mt-4 text-slate-600 dark:text-slate-300">Ikatan Mahasiswa Aceh Selatan (IMAS) adalah sebuah organisasi yang berdomilisi di Lhokseumawe dan Aceh Utara. Organisasi ini adalah wadah perkumpulan mahasiswa asal Aceh Selatan di Lhokseumawe dan Aceh Utara. Untuk di ketahui Imas adalah organisasi sah yang di SK kan langsung oleh pemerintah kabupaten Aceh Selatan. Imas juga merupakan sebuah agent of control agent of change daripada kabupaten Aceh Selatan.</p>
+          <div class="mt-6 grid sm:grid-cols-2 gap-4">
+            <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
+              <p class="font-semibold">Visi</p>
+              <p class="text-sm opacity-80">-</p>
+            </div>
+            <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-4">
+              <p class="font-semibold">Motto</p>
+              <p class="text-sm opacity-80">-</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROGRAM -->
+  <section id="program" class="py-16 bg-white dark:bg-slate-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-extrabold">Program Kerja</h2>
+        <a href="#" class="text-sm font-semibold hover:underline">Lihat Kalender</a>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Card -->
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Beasiswa & Mentoring</h3>
+          <p class="mt-2 text-sm opacity-80">Pendampingan beasiswa, bimbingan karya tulis ilmiah, dan kelas menulis CV.</p>
+          <ul class="mt-3 text-sm list-disc ml-5 opacity-80">
+            <li>Klinik Essay</li>
+            <li>Bimbingan PKM</li>
+            <li>Pelatihan Public Speaking</li>
+          </ul>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Sosial & Pengabdian</h3>
+          <p class="mt-2 text-sm opacity-80">Aksi peduli banjir, literasi desa, bakti kesehatan, dan kelas coding gratis.</p>
+          <ul class="mt-3 text-sm list-disc ml-5 opacity-80">
+            <li>HIMAS Mengajar</li>
+            <li>Donor Darah</li>
+            <li>Hijaukan Kampus</li>
+          </ul>
+        </article>
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 hover:shadow-lg transition">
+          <h3 class="font-bold text-lg">Kewirausahaan</h3>
+          <p class="mt-2 text-sm opacity-80">Inkubasi bisnis, bazar UMKM mahasiswa, dan pelatihan digital marketing.</p>
+          <ul class="mt-3 text-sm list-disc ml-5 opacity-80">
+            <li>Class: Branding</li>
+            <li>Bootcamp UMKM</li>
+            <li>Market Day</li>
+          </ul>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEGIATAN / EVENT -->
+  <section id="kegiatan" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-extrabold">Kegiatan Terdekat</h2>
+        <a href="#" class="text-sm font-semibold ">COMING SOON</a>
+      </div>
+      <div class="mt-8 grid lg:grid-cols-3 md:grid-cols-2 gap-6">
+        <!-- Event card -->
+    </div>
+  </section>
+
+  <!-- BERITA -->
+  <section id="berita" class="py-16 bg-white dark:bg-slate-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="flex items-end justify-between gap-4">
+        <h2 class="text-3xl font-extrabold">Berita & Pengumuman</h2>
+        <a href="#" class="text-sm font-semibold hover:underline">Semua Berita</a>
+      </div>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <article class="rounded-2xl border border-slate-200 dark:border-slate-700 overflow-hidden">
+          <img src="MUBES.jpg" alt="Berita 1" class="h-44 w-full object-cover">
+          <div class="p-6">
+            <p class="text-xs opacity-70">13 Juli 2025</p>
+            <h3 class="mt-1 font-bold">Musyawarah Besar Ikatan Mahasiswa aceh Selatan</h3>
+            <p class="mt-2 text-sm opacity-80">Ikatan Mahasiswa Aceh Selatan, Domisili Lhokseumawe - Aceh Utara, Melaksanakan Musyawarah Besar yang berlangsung di Cafe Tanggo Coffee, Bathupat Timur, 13 - 07 - 2025.</p>
+            <a href="https://www.wartapembaruan.co.id/2025/07/musyawarah-besar-ikatan-mahasiswa-aceh.html" 
+            class="mt-3 inline-block text-sm font-semibold text-aksen-600 hover:underline">
+            Baca selengkapnya
+            </a>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PENGURUS -->
+  <section id="pengurus" class="py-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold">Struktur Pengurus</h2>
+      <div class="mt-8 grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Person Card -->
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 text-center">
+          <img src="ketuaumum.jpg" alt="Ketua Umum" class="mx-auto h-28 w-28 rounded-full object-cover">
+          <h3 class="mt-4 font-bold">Arian Dani</h3>
+          <p class="text-sm opacity-80">Ketua Umum</p>
+          <div class="mt-3 flex justify-center gap-3 text-sm">
+            <a href="mailto:ketua@himas.id" class="underline">Email</a>
+            <a href="https://instagram.com/ariandaani" class="underline" target="_blank">IG</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 text-center">
+          <img src="wakil.jpg" alt="Sekretaris Umum" class="mx-auto h-28 w-28 rounded-full object-cover">
+          <h3 class="mt-4 font-bold">Alza Kumaini</h3>
+          <p class="text-sm opacity-80">Wakil Ketua</p>
+          <div class="mt-3 flex justify-center gap-3 text-sm">
+            <a href="mailto:sekum@himas.id" class="underline">Email</a>
+            <a href="https://instagram.com/jhaaa__n" class="underline" target="_blank">IG</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 text-center">
+          <img src="sekjend.jpg" alt="Bendahara Umum" class="mx-auto h-28 w-28 rounded-full object-cover">
+          <h3 class="mt-4 font-bold">Naufal Syahputra</h3>
+          <p class="text-sm opacity-80">Sekretaris Umum</p>
+          <div class="mt-3 flex justify-center gap-3 text-sm">
+            <a href="mailto:bendum@himas.id" class="underline">Email</a>
+            <a href="https://instagram.com/naufaladhaa_" class="underline" target="_blank">IG</a>
+          </div>
+        </div>
+        <div class="rounded-2xl border border-slate-200 dark:border-slate-700 p-6 text-center">
+          <img src="bendum.jpg" alt="Kepala Humas" class="mx-auto h-28 w-28 rounded-full object-cover">
+          <h3 class="mt-4 font-bold">Siti Aminah</h3>
+          <p class="text-sm opacity-80">Bendahara Umum</p>
+          <div class="mt-3 flex justify-center gap-3 text-sm">
+            <a href="mailto:humas@himas.id" class="underline">Email</a>
+            <a href="https://instagram.com/minah_1611" class="underline" target="_blank">IG</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GALERI -->
+  <section id="galeri" class="py-16 bg-white dark:bg-slate-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-extrabold">Galeri</h2>
+      <div class="mt-8 grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+        <img src="fotomubes1.jpg" alt="Galeri 1" class="h-48 w-full object-cover rounded-2xl">
+        <img src="fotomubes2.jpg" alt="Galeri 2" class="h-48 w-full object-cover rounded-2xl">
+        <img src="fotomubes3.jpg" alt="Galeri 3" class="h-48 w-full object-cover rounded-2xl">
+      </div>
+    </div>
+  </section>
+
+<!-- FORMULIR PENDAFTARAN -->
+<section id="oprec" class="py-16">
+  <div class="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+    <div class="rounded-3xl border border-slate-200 dark:border-slate-700 p-6 lg:p-8 bg-blue">
+      <h2 class="text-3xl font-extrabold mb-6">Open Recruitment Anggota IMAS</h2>
+      <p class="text-sm opacity-80 mb-6">Pilih divisi yang kamu minati dan klik "Daftar" untuk menuju Google Form pendaftaran resmi.</p>
+
+      <div class="grid sm:grid-cols-2 gap-4">
+        <!-- Contoh Divisi -->
+        <div class="border rounded-xl p-4 flex flex-col justify-between bg-slate-50 dark:bg-slate-800">
+          <h3 class="text-lg font-semibold mb-2">Humas dan Agama</h3>
+          <p class="text-sm opacity-80 mb-4">Bergabung untuk kegiatan publikasi, sosial, dan keagamaan.</p>
+          <a href="https://forms.gle/link-humas" target="_blank" class="mt-auto inline-block text-center rounded-xl bg-aksen-600 hover:bg-aksen-700 text-white px-4 py-2 font-semibold">Daftar</a>
+        </div>
+
+        <div class="border rounded-xl p-4 flex flex-col justify-between bg-slate-50 dark:bg-slate-800">
+          <h3 class="text-lg font-semibold mb-2">Minat dan Bakat</h3>
+          <p class="text-sm opacity-80 mb-4">Kembangkan minat dan bakat melalui kegiatan kreatif.</p>
+          <a href="https://forms.gle/link-minat" target="_blank" class="mt-auto inline-block text-center rounded-xl bg-aksen-600 hover:bg-aksen-700 text-white px-4 py-2 font-semibold">Daftar</a>
+        </div>
+
+        <div class="border rounded-xl p-4 flex flex-col justify-between bg-slate-50 dark:bg-slate-800">
+          <h3 class="text-lg font-semibold mb-2">Kaderisasi</h3>
+          <p class="text-sm opacity-80 mb-4">Ikuti pelatihan dan pengembangan kader organisasi.</p>
+          <a href="https://forms.gle/link-kaderisasi" target="_blank" class="mt-auto inline-block text-center rounded-xl bg-aksen-600 hover:bg-aksen-700 text-white px-4 py-2 font-semibold">Daftar</a>
+        </div>
+
+        <div class="border rounded-xl p-4 flex flex-col justify-between bg-slate-50 dark:bg-slate-800">
+          <h3 class="text-lg font-semibold mb-2">Infokom</h3>
+          <p class="text-sm opacity-80 mb-4">Bergabung untuk teknologi, desain, dan informasi komunikasi.</p>
+          <a href="https://forms.gle/link-infokom" target="_blank" class="mt-auto inline-block text-center rounded-xl bg-aksen-600 hover:bg-aksen-700 text-white px-4 py-2 font-semibold">Daftar</a>
+        </div>
+
+        <div class="border rounded-xl p-4 flex flex-col justify-between bg-slate-50 dark:bg-slate-800">
+          <h3 class="text-lg font-semibold mb-2">Kajian Kasrat</h3>
+          <p class="text-sm opacity-80 mb-4">Ikuti kajian ilmiah, diskusi, dan kegiatan kreatif.</p>
+          <a href="https://forms.gle/link-kajian" target="_blank" class="mt-auto inline-block text-center rounded-xl bg-aksen-600 hover:bg-aksen-700 text-white px-4 py-2 font-semibold">Daftar</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<script>
+const form = document.getElementById('formDaftar');
+const tabel = document.getElementById('tabelDaftar').querySelector('tbody');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault(); // cegah reload
+
+  const data = new FormData(form);
+  const row = document.createElement('tr');
+
+  row.innerHTML = `
+    <td class="px-4 py-2 border">${data.get('nama')}</td>
+    <td class="px-4 py-2 border">${data.get('email')}</td>
+    <td class="px-4 py-2 border">${data.get('wa')}</td>
+    <td class="px-4 py-2 border">${data.get('divisi')}</td>
+    <td class="px-4 py-2 border">${data.get('motivasi')}</td>
+  `;
+
+  tabel.appendChild(row);
+  form.reset();
+});
+</script>
+
+
+<script>
+const form = document.getElementById('formDaftar');
+const tabel = document.getElementById('tabelDaftar').querySelector('tbody');
+
+form.addEventListener('submit', function(e){
+  e.preventDefault(); // mencegah reload halaman
+
+  const data = new FormData(form);
+  const row = document.createElement('tr');
+
+  row.innerHTML = `
+    <td class="border px-4 py-2">${data.get('nama')}</td>
+    <td class="border px-4 py-2">${data.get('email')}</td>
+    <td class="border px-4 py-2">${data.get('wa')}</td>
+    <td class="border px-4 py-2">${data.get('divisi')}</td>
+    <td class="border px-4 py-2">${data.get('motivasi')}</td>
+  `;
+
+  tabel.appendChild(row);
+  form.reset(); // kosongkan form setelah submit
+});
+</script>
+
+  <!-- KONTAK & PETA -->
+  <section id="kontak" class="py-16 bg-white dark:bg-slate-950">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid lg:grid-cols-2 gap-8 items-start">
+        <div class="rounded-3xl border border-slate-200 dark:border-slate-700 p-6 lg:p-8">
+          <h2 class="text-3xl font-extrabold">Kontak</h2>
+          <ul class="mt-4 space-y-2 text-sm">
+            <li><strong>Email:</strong> imasacehutara2025@gmail.com</li>
+            <li><strong>WhatsApp:</strong> 082299019988</li>
+            <li><strong>Instagram:</strong> @imaslhokseumaweacehutara</li>
+            <li><strong>Alamat Sekretariat:</strong> Lhokseumawe, Aceh utara</li>
+          </ul>
+        </div>
+        <div class="rounded-3xl overflow-hidden border border-slate-200 dark:border-slate-700 h-[380px]">
+          <!-- Ganti src peta dengan lokasi sekretariat yang benar -->
+          <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.479999!2d97.143516!3d5.178653!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x304b8c0b1e2b4c7d%3A0x0!2sLhokseumawe!5e0!3m2!1sid!2sid!4v1690000000000"
+  width="100%"
+  height="450"
+  style="border:0; border-radius:1rem;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="pt-12 pb-16">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid md:grid-cols-4 gap-8">
+        <div>
+          <div class="flex items-center gap-3">
+            <img src="imas.png" alt="Logo IMAS" class="h-10 w-10 rounded-full object-cover" />
+            <p class="font-extrabold">IMAS</p>
+          </div>
+          <p class="mt-3 text-sm opacity-80">Ikatan Mahasiswa Aceh Selatan .</p>
+        </div>
+        <div>
+          <p class="font-semibold">Tautan</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="#berita" class="hover:underline">Berita</a></li>
+            <li><a href="#program" class="hover:underline">Program</a></li>
+            <li><a href="#galeri" class="hover:underline">Galeri</a></li>
+          </ul>
+        </div>
+        <div>
+          <p class="font-semibold">Dokumen</p>
+          <ul class="mt-3 space-y-2 text-sm">
+            <li><a href="File ADRT IMAS.pdf" class="hover:underline">AD/ART</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-10 border-t border-slate-200 dark:border-slate-800 pt-6 text-sm flex flex-wrap items-center justify-between gap-3">
+        <p>© <span id="year"></span> IMAS — Ikatan Mahasiswa Aceh Selatan. All rights reserved.</p>
+        <div class="flex items-center gap-3">
+          <a href="#" class="hover:underline">Kebijakan Privasi</a>
+          <a href="#" class="hover:underline">Syarat & Ketentuan</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING ACTION -->
+  <a href="https://wa.me/6282299019988" target="_blank" class="fixed bottom-5 right-5 rounded-full shadow-xl bg-green-500 text-white px-4 py-3 font-semibold flex items-center gap-2">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="h-5 w-5"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4.7 14.6c-.2.6-1 1-1.6 1.1-.4 0-.8 0-1.2-.1-1.9-.4-3.6-1.5-4.8-3-1-1.1-1.8-2.6-2.1-4.2 0-.6.2-1.4.8-1.7.4-.3.9-.6 1.4-.5.4 0 .5.5.7.8.2.6.5 1.2.6 1.8 0 .3-.2.6-.4.8l-.4.5c.8 1.7 2.2 3.1 3.9 3.9l.5-.4c.2-.2.5-.4.8-.4.6.1 1.2.4 1.8.6.3.1.8.3.8.7 0 .4-.2.9-.4 1.1z"/></svg>
+    <span>Hubungi IMAS</span>
+  </a>
+
+  <!-- Scripts: menu, tema, form -->
+  <script>
+    // Tahun otomatis
+    document.getElementById('year').textContent = new Date().getFullYear()
+
+    // Toggle menu mobile
+    const btnMenu = document.getElementById('btnMenu')
+    const mobileMenu = document.getElementById('mobileMenu')
+    btnMenu?.addEventListener('click', () => mobileMenu.classList.toggle('hidden'))
+
+    // Toggle tema gelap/terang
+    const btnTheme = document.getElementById('btnTheme')
+    const iconSun = document.getElementById('iconSun')
+    const iconMoon = document.getElementById('iconMoon')
+    const root = document.documentElement
+    const applyThemeIcon = () => {
+      const dark = root.classList.contains('dark')
+      iconMoon.classList.toggle('hidden', dark)
+      iconSun.classList.toggle('hidden', !dark)
+    }
+    btnTheme?.addEventListener('click', () => {
+      root.classList.toggle('dark')
+      localStorage.setItem('theme', root.classList.contains('dark') ? 'dark' : 'light')
+      applyThemeIcon()
+    })
+    applyThemeIcon()
+
+    // Simulasi submit form (tanpa backend)
+    const form = document.getElementById('formDaftar')
+    const msg = document.getElementById('formMsg')
+    form?.addEventListener('submit', (e) => {
+      e.preventDefault()
+      const data = Object.fromEntries(new FormData(form))
+      // TODO: ganti dengan endpoint Google Form / Sheet / API organisasi
+      console.log('Data pendaftaran:', data)
+      msg.textContent = 'Terima kasih! Data pendaftaran terkirim. Admin akan menghubungi kamu.'
+      msg.className = 'text-sm text-green-600 dark:text-green-400'
+      form.reset()
+    })
+  </script>
+
+  <!-- SEO: Schema.org basic organization -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "Himpunan Mahasiswa Aceh Selatan",
+    "alternateName": "HIMAS",
+    "url": "https://himas.id",
+    "logo": "https://himas.id/logo-himas.png",
+    "sameAs": [
+      "https://www.instagram.com/himas.acehselatan"
+    ],
+    "contactPoint": [{
+      "@type": "ContactPoint",
+      "contactType": "customer support",
+      "email": "sekretariat@himas.id",
+      "telephone": "+6281234567890",
+      "areaServed": "ID"
+    }]
+  }
+  </script>
+</body>
+</html>
